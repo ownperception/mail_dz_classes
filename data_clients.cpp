@@ -1,4 +1,4 @@
-#include"data_client.h"
+#include"data_clients.h"
 
 data_client::data_client():size(0)
 {}
@@ -112,7 +112,7 @@ void data_client::show_if_over_talk_intra_city(size_t limit){
 
 void data_client::show_AB(){
 	map<char*,int> m;
-
+//закидываем в map чтобы отсортировть по полному имени, потом по их индексам в базе данных выводим в отсортированном порядке map'а 
 	for(size_t i = 0; i < this->size; i++){
 		full_name fl_name = this->clients[i].get_full_name_user();
 		size_t size_fl_name = sizeof(fl_name.surname) +sizeof(fl_name.name) + sizeof(fl_name.secname) + 1;
